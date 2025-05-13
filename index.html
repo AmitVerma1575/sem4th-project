@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Maze Escape Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./styl.css/style.css" />
+</head>
+<body class="dark">
+  <h1>🧍 Maze Escape</h1>
+
+  <div id="controls">
+    <label>Rows:
+      <input type="number" id="rows" value="10" min="5" max="50">
+    </label>
+    <label>Cols:
+      <input type="number" id="cols" value="10" min="5" max="50">
+    </label>
+    <button onclick="generateMaze()">🎲 Generate</button>
+    <button id="findPathBtn" onclick="runDijkstra()">🧭 Find Path</button>
+    <button onclick="resetGrid()">🔁 Reset</button>
+  </div>
+  
+
+  <div id="grid"></div>
+  <div id="status"></div>
+
+  <audio id="beep" src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg" preload="auto"></audio>
+  <script src="./script.css/script.js"></script>
+</body>
+</html>

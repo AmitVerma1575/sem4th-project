@@ -1,0 +1,127 @@
+
+
+:root {
+  --rows: 10;
+  --cols: 10;
+}
+
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #121212;
+  color: #e2e2e2;
+  min-height: 100vh;
+}
+
+h1 {
+  margin: 24px 0 12px;
+  font-size: 2.2rem;
+  color: #3acff4;
+  text-shadow: 0 0 10px #3acff4aa;
+  letter-spacing: 1px;
+}
+
+#controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  padding: 16px 20px;
+  background: #1e1e1e;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.8);
+}
+
+#controls label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  color: #ccc;
+}
+
+#controls input {
+  margin-top: 5px;
+  padding: 8px 10px;
+  font-size: 14px;
+  border-radius: 8px;
+  background: #151515;
+  color: #fff;
+  border: 1px solid #444;
+  width: 60px;
+  text-align: center;
+}
+
+#controls button {
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  background: linear-gradient(to right, #00ffe5, #3acff4);
+  color: #000;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 255, 229, 0.3);
+}
+
+#controls button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 255, 229, 0.5);
+}
+
+#findPathBtn {
+  font-size: 16px;
+  padding: 12px 22px;
+  background: linear-gradient(to right, #00ffc3, #00bfff);
+  box-shadow: 0 0 8px #00ffc3aa;
+}
+
+#grid {
+  display: grid;
+  width: 92vw;
+  max-width: 800px;
+  aspect-ratio: 1 / 1;
+  grid-template-columns: repeat(var(--cols), 1fr);
+  grid-template-rows: repeat(var(--rows), 1fr);
+  gap: 1px;
+  margin-bottom: 20px;
+  border: 2px solid #00ffc3;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #0e0e0e;
+}
+
+.cell {
+  border: 1px solid #2a2a2a;
+  background: #1b1b1b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: calc(22px / max(var(--rows), var(--cols)));
+  color: #fff;
+  aspect-ratio: 1;
+  user-select: none;
+}
+
+.wall { background: #555; }
+.start { background: #0f0; color: #000; font-weight: bold; }
+.end { background: #f33; color: #000; font-weight: bold; }
+.visited { background: #2979ff; }
+
+.path {
+  background: linear-gradient(45deg, #e6e922, #ec8123);
+  box-shadow: 0 0 8px #dd9d12;
+}
+
+#status {
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 24px;
+  color: #3acff4;
+}
